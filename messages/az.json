@@ -1,0 +1,18 @@
+{
+  "Login": {
+    "login": "Hesaba daxil ol"
+  },
+  "Admin": {
+    "products": "Produktlar",
+    "categories": "Kateqoriyalar",
+    "orders": "Sifarişlər",
+    "users": "İstifadəçilər",
+    "logout": "Çıxış et",
+     "addNewProduct": "Yeni məhsul əlavə et"
+  },
+  "LocaleSwitcher": {
+    "az": "Azərbaycan dili",
+    "en": "İngilis dili",
+    "chooseLanguage": "Dili seç:"
+  }
+}

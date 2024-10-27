@@ -1,0 +1,18 @@
+{
+    "Login": {
+      "login": "Login"
+    },
+    "Admin": {
+      "products": "Products",
+      "categories": "Categories",
+      "orders": "Orders",
+      "users": "Users",
+      "logout": "Log out",
+      "addNewProduct": "Add new product"
+    },
+    "LocaleSwitcher": {
+    "az": "Azerbaijani",
+    "en": "English",
+    "chooseLanguage": "Choose language:"
+  }
+  }

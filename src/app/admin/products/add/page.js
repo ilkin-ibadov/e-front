@@ -18,6 +18,7 @@ const AddProduct = () => {
       images={images}
       setImages={setImages}
       type="add"
+      formType="product"
     />
   );
 };

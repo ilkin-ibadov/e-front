@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 const EditProduct = ({ searchParams }) => {
   const [product, setProduct] = useState({});
+  const [images, setImages] = useState([]);
 
   const handleInputChange = (name, value) => {
     setProduct((prevState) => ({ ...prevState, [name]: value }));
@@ -29,6 +30,8 @@ const EditProduct = ({ searchParams }) => {
     <ProductForm
       product={product}
       handleInputChange={handleInputChange}
+      images={images}
+      setImages={setImages}
       type="edit"
     />
   );

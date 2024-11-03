@@ -12,6 +12,7 @@ const ProductForm = ({
   images,
   setImages,
   type,
+  formType
 }) => {
   const [urlImages, setUrlImages] = useState([])
   const [deletedImages, setDeletedImages] = useState([])
@@ -45,14 +46,25 @@ const ProductForm = ({
     const form = new FormData();
 
     Object.entries(product).forEach(([key, value]) => {
+      
+
+      if (key === "gallery") { 
+        const formattedGallery = value.filter(item => item !== "")
+        form.append("gallery", formattedGallery);
+      }
+      
       form.append(key, value);
     });
 
-    images && images.forEach((file) => {
+    images?.length && images.forEach((file) => {
       form.append("gallery", file);
     });
 
-    form.append("deletedImages", deletedImages);
+    urlImages.forEach((url) => {
+      form.append("gallery", url);
+    });
+
+    deletedImages?.length && form.append("deletedImages", deletedImages);
 
     const result = await fetchData({
       url: `http://localhost:5001/products/edit/${product._id}`,
@@ -131,7 +143,7 @@ const ProductForm = ({
           placeholder="Add product images"
         /> */}
 
-        <ImageUpload urlImages={urlImages} setUrlImages={setUrlImages} images={images} setImages={setImages} setDeletedImages={setDeletedImages}/>
+       {formType === "product" && <ImageUpload urlImages={urlImages} setUrlImages={setUrlImages} images={images} setImages={setImages} setDeletedImages={setDeletedImages} />}
 
         <button
           onClick={() => {

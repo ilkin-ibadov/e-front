@@ -12,10 +12,6 @@ const SideMenuComponent = () => {
   const t = useTranslations('Admin');
   const logout = useAuth(state => state.logout)
 
-  const handleModeChange = (value) => {
-    localStorage.setItem('darkMode', JSON.stringify(value === "dark" ? "true" : "false"))
-  }
-
   const menuItems = [
     {
       title: t("products"),
@@ -23,7 +19,7 @@ const SideMenuComponent = () => {
     },
     {
       title: t("categories"),
-      route: "/admin/category",
+      route: "/admin/categories",
     },
     {
       title: t("orders"),
@@ -40,18 +36,11 @@ const SideMenuComponent = () => {
      
       <div className="flex flex-col">
       <LocaleSwitcher/>
-      {/* <select onChange={(e)=> {
-        handleModeChange(e.target.value)
-      }}>
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-
-      </select> */}
         {menuItems.map((item) => (
           <Link
             key={item.title}
             className="py-4 border-b border-blue-900"
-            href={`/${item.route}`}
+            href={item.route}
           >
             {item.title}
           </Link>
@@ -65,7 +54,7 @@ const SideMenuComponent = () => {
           logout()
           router.push("/login")
         }}
-        className="px-4 py-2 text-white rounded-[24px] bg-red-600 dark:bg-white mb-5"
+        className="px-4 py-2 text-white rounded-[24px] bg-red-600 mb-5"
       >
         {t("logout")}
       </button>

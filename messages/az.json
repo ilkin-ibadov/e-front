@@ -8,11 +8,18 @@
     "orders": "Sifarişlər",
     "users": "İstifadəçilər",
     "logout": "Çıxış et",
-     "addNewProduct": "Yeni məhsul əlavə et"
+    "addNewProduct": "Yeni məhsul əlavə et"
   },
   "LocaleSwitcher": {
     "az": "Azərbaycan dili",
     "en": "İngilis dili",
     "chooseLanguage": "Dili seç:"
+  },
+  "Categories": {
+    "categories": "Kateqoriyalar",
+    "addNewCategory": "Yeni kateqoriya əlavə et",
+    "editCategory": "Kateqoriyanı editlə",
+    "save": "Yadda saxla",
+    "add": "Əlavə et"
   }
 }

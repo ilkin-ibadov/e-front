@@ -11,6 +11,7 @@ export const fetchData = async ({
   returnsData = true,
   contentType = "application/json",
 }) => {
+
   const access_token = getCookie("access_token");
 
   try {
@@ -33,6 +34,8 @@ export const fetchData = async ({
     const response = await fetch(url, options);
     const data = response.ok && returnsData ? await response?.json() : null;
 
+    console.log(data)
+
     if (response.ok) {
       return {
         success: true,
@@ -43,7 +46,7 @@ export const fetchData = async ({
       const tokensRefreshed = await refreshTokens();
 
       if (tokensRefreshed) {
-        fetchData({url, tokenRequired, method, body, returnsData, contentType});
+        fetchData({ url, tokenRequired, method, body, returnsData, contentType });
       }
     } else {
       console.error(`Fetch error: ${response.status} ${response.statusText}`);

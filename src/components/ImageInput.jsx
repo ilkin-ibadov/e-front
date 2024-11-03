@@ -7,7 +7,6 @@ const ImageUpload = ({ urlImages, setUrlImages, images, setImages, maxImages = 2
   // console.log(imgUrls)
   const [previews, setPreviews] = useState([]);
 
-
   // Minimum image dimensions
   const MIN_WIDTH = 1500;
   const MIN_HEIGHT = 1500;

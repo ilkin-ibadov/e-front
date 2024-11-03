@@ -4,7 +4,6 @@ import { deleteCookie, getCookie, setCookie } from "cookies-next";
 import { redirect } from "next/navigation";
 
 export const refreshTokens = async () => {
-  
   const refresh_token = getCookie("refresh_token");
 
   if (refresh_token) {
@@ -23,16 +22,15 @@ export const refreshTokens = async () => {
         headers: headers,
         body: body,
       });
-     
 
       if (response.ok) {
         const data = await response.json();
         setCookie("access_token", data.accessToken);
         return true;
       } else {
-        deleteCookie("access_token")
-        deleteCookie("refresh_token")
-        redirectRoute = "/login"
+        // deleteCookie("access_token")
+        // deleteCookie("refresh_token")
+        // redirectRoute = "/login"
       }
     } catch (error) {
       console.error("Error on refreshTokens", error);
